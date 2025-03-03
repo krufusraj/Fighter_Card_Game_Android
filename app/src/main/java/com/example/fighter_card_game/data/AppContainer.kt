@@ -5,6 +5,7 @@ import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFact
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import retrofit2.Retrofit
+import retrofit2.converter.scalars.ScalarsConverterFactory
 
 interface AppContainer {
     val auctionHouseRepository: AuctionHouseRepository
@@ -16,13 +17,14 @@ interface AppContainer {
  * Variables are initialized lazily and the same instance is shared across the whole app.
  */
 class DefaultAppContainer : AppContainer {
-    private val baseUrl = "https://android-kotlin-fun-mars-server.appspot.com/"
+    private val baseUrl = "http://172.30.8.145:8081"
 
     /**
      * Use the Retrofit builder to build a retrofit object using a kotlinx.serialization converter
      */
     private val retrofit: Retrofit = Retrofit.Builder()
-        .addConverterFactory(Json.asConverterFactory("application/json".toMediaType()))
+        //.addConverterFactory(Json.asConverterFactory("application/json".toMediaType()))
+        .addConverterFactory(ScalarsConverterFactory.create())
         .baseUrl(baseUrl)
         .build()
 

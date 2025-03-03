@@ -5,6 +5,6 @@ import retrofit2.http.GET
 
 interface AuctionHouseService {
     @GET("auction")
-    suspend fun getAuctionHouseCards(): List<AuctionHouseCards>
+    suspend fun getAuctionHouseCards(): String
 
 }
