@@ -1,7 +1,9 @@
 [versions]
 agp = "8.7.3"
-converterScalars = "2.9.0"
 kotlin = "2.1.0"
+composeBom = "2025.02.00"
+converterScalars = "2.9.0"
+converterScalarsVersion = "2.9.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -18,9 +20,14 @@ okhttp = "4.12.0"
 retrofit2KotlinxSerializationConverter = "1.0.0"
 
 [libraries]
+androidx-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+androidx-material3 = { module = "androidx.compose.material3:material3" }
+androidx-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
+androidx-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
 converter-scalars = { module = "com.squareup.retrofit2:converter-scalars", version = "2.11.0" }
+converter-scalars-v290 = { module = "com.squareup.retrofit2:converter-scalars", version.ref = "converterScalarsVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -36,6 +43,7 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 retrofit2-kotlinx-serialization-converter = { module = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter", version.ref = "retrofit2KotlinxSerializationConverter" }
 
 [plugins]
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 
