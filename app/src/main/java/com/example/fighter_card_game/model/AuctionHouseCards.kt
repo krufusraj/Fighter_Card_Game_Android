@@ -7,7 +7,7 @@ data class AuctionHouseCards (
     val auctionHouseCardId: Int,
     val postedTime: String,
     val expirationTime: String,
-    val fighterCard: FighterCard,
+    val card: Card,
     val buyNowPrice: Int,
     val bidAmount: Int,
     val duration: Int,

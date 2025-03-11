@@ -57,6 +57,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     // Kotlin serialization
     implementation(libs.kotlinx.serialization.json)
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7")
 
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.material3)
@@ -70,6 +71,13 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.activity)
     testImplementation(libs.junit)
+    implementation (libs.material3)
+    implementation (libs.androidx.lifecycle.runtime.ktx)
+    implementation (libs.androidx.activity.compose)
+    implementation (libs.androidx.ui)
+    implementation (libs.androidx.ui.graphics)
+    implementation (libs.ui.tooling.preview)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    debugImplementation(libs.androidx.ui.tooling)
 }
